@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-12-10T23:39:36.547Z",
-    "end": "2020-12-10T23:39:54.110Z",
-    "duration": 17563,
+    "start": "2020-12-10T23:41:29.363Z",
+    "end": "2020-12-10T23:41:45.941Z",
+    "duration": 16578,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "94d2714f-1265-400b-b204-2f4a98ebd264",
+      "uuid": "34051ba9-87f3-435f-92c4-7ecee0d28e31",
       "title": "",
       "fullFile": "cypress/integration/compra.spec.js",
       "file": "cypress/integration/compra.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "61ca2692-63b8-4e8b-99e6-04ec2606e442",
+          "uuid": "bc468f5b-e395-44d1-ad82-892b4b20981e",
           "title": "Compra",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Efetuar uma compra de produto",
               "fullTitle": "Compra Efetuar uma compra de produto",
               "timedOut": null,
-              "duration": 17504,
+              "duration": 16529,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.backgroundLogin(); //logar usar os cookies\n//cy.setCookie(\n//    'PrestaShop-a30a9934ef476d11b6cc3c983616e364',\n//    'R6xmma6F4U6edNQuu67M0rPopjUfg6txBuPsd2lA4oo03lANCWBG6dZDVNiZVhoZqXTiWkVOxRGttaDq0zUq0O9jlkUq%2FyV9rvFPxw7irR84NkYgy8eKtXhTCOsMZBkZB7okO56agMwVth2rt9BJGI3eKNMiFOQjiZ%2BavJAqgxHYTbEqc9kwkH4XnMkpqpLCxfLuPTS5p0GygNJKNfNp0xEAxFixm5kagTxb2PFaUUxmi410tpnkS8qtrd%2F1ASN4vGdmI3QNe%2BKull7DXvEWfnsEO4ZvFIHtwJ28VpJMYvF%2FAQhMd%2BoDiSNqU8QZwmFlYa8J4dgRentAApLnkq8q2k9l%2FSWJ%2Bb55orA0K%2BzFhQe0B%2FU5RTEjjues3AESe9%2FlKNt5YC8oeRyN7mkkRoxFifJJ4%2BXn8ex391jFIZrwrUANc4kcPTTnjkXAV5ldMfoTjBcq1w28m715f62lyhYC0g%3D%3D000349'\n//)\ncy.visit('/');\nvar nomeProduto = 'Faded Short Sleeve T-shirts';\ncy.contains(nomeProduto).trigger('mouseover');\ncy.contains(nomeProduto) //identifica elemento com o texto\n.parent() //identifica o pai (h5)\n.siblings('div.button-container') // ve os irmaos \n.children('a') // ve os filhos\n.first() // add to cart\n.click(); // Validando se o produto foi adicionado ao carrinho com sucesso\ncy.get('.icon-ok').parent() //h2\n.should('contain.text', 'Product successfully added to your shopping cart');\ncy.get('span#layer_cart_product_title').should('contain.text', nomeProduto);\ncy.get(\".button-container a[href$='controller=order']\").click();\ncy.get(\".cart_navigation a[href$='order&step=1']\").click(); // se usa pra logar sem usar os cookies\n//cy.get('#email').type('arthur-agilizei@mail.com')\n//cy.get('#passwd').type('Test123')\n//cy.get('button#SubmitLogin').click()\n// Validando se o endereço de entrega é igual o de cobrança\n//[type=checkbox]#addressesAreEquals\n//asserção | atributo | valor \ncy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'checked', 'checked');\ncy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'name', 'same');\ncy.get('button[name=processAddress]').click();\ncy.get('[type=checkbox]#cgv').check();\ncy.get(\"button[name='processCarrier']\").click();\ncy.get('.bankwire').click();\ncy.get('.cart_navigation button[type=submit]').find('span').contains('I confirm my order').click();\ncy.get(' .cheque-indent strong').should('contain.text', 'Your order on My Store is complete.'); //1. capturar o texto do box\ncy.get('div.box').invoke('text').then(function (text) {\n  console.log(text);\n  console.log(text.match(/[A-Z][A-Z]+/g)[1]); //0 -> RTP\n  //1 -> ID do pedido que queremos\n  //2. filtrar o texto do box para extrair somente o ID do pedido\n  //3. armazenar o ID do pedido de alguma forma\n  //escrita de um arquivo json com o conteúdo do pedido\n  //caminho do arquivo (sempre a partir do root) | conteúdo do arquivo\n  cy.writeFile('cypress/fixtures/pedido.json', {\n    id: \"\".concat(text.match(/[A-Z][A-Z]+/g)[1])\n  });\n});\ncy.get(\".cart_navigation a[href$='history']\").click(); //leitura de um arquivo\n//4. obter o ID do pedido armazenado de alguma forma\ncy.readFile('cypress/fixtures/pedido.json').then(function (pedido) {\n  cy.get('tr.first_item .history_link a').should('contain.text', pedido.id);\n}); //Infos adicionais:\n//html\n// . = classe\n//json - json path\n//. = nivel dentro do caminho json",
               "err": {},
-              "uuid": "de6fa84c-32de-444f-a863-b25c30b1aba0",
-              "parentUUID": "61ca2692-63b8-4e8b-99e6-04ec2606e442",
+              "uuid": "ad7e3fd9-5d08-42f6-aa2d-eaba6543cc1c",
+              "parentUUID": "bc468f5b-e395-44d1-ad82-892b4b20981e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "de6fa84c-32de-444f-a863-b25c30b1aba0"
+            "ad7e3fd9-5d08-42f6-aa2d-eaba6543cc1c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 17504,
+          "duration": 16529,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
